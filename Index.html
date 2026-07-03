@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ A Special Surprise ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff5fa2,#ffbfd9);
+}
+
+.container{
+text-align:center;
+padding:20px;
+color:white;
+animation:fade 1s;
+}
+
+h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+p{
+font-size:25px;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+button{
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:40px;
+background:#ff2f6d;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.heart{
+position:fixed;
+color:white;
+font-size:25px;
+animation:fall 6s linear infinite;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hi ❤️</h1>
+
+<p>
+💌 Kuchh kehna tha aapse...
+</p>
+
+<button onclick="giftPage()">🎁 Open My Gift</button>
+
+</div>
+
+<script>
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},250);function giftPage(){
+
+document.body.innerHTML=`
+
+<div class="container">
+
+<h1>🎁 A Small Gift For You ❤️</h1>
+
+<div style="font-size:100px;animation:pop 1s infinite alternate;">
+🎁
+</div>
+
+<p>
+
+🥺 I Miss You Very Much ❤️<br><br>
+
+❤️ I Love You So Much ❤️<br><br>
+
+🤗 Sending You A Big Virtual Hug 🤗
+
+</p>
+
+<div style="font-size:80px;">
+🤗💖🌹
+</div>
+
+<br>
+
+<button onclick="heartPage()">
+❤️ Open My Heart ❤️
+</button>
+
+</div>
+
+<style>
+
+@keyframes pop{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.15);
+}
+
+}
+
+</style>
+
+`;
+
+}
+
+function heartPage(){
+
+document.body.innerHTML=`
+
+<div class="container">
+
+<h1>❤️ From My Heart ❤️</h1>
+
+<p>
+
+Every moment with you feels special. ✨<br><br>
+
+You always stay in my thoughts. 🥹❤️<br><br>
+
+I Miss You Every Single Day. 💖<br><br>
+
+You Mean A Lot To Me. 🌹
+
+</p>
+
+<div style="font-size:90px;">
+🌹❤️🤗❤️🌹
+</div>
+
+<br>
+
+<button onclick="lastPage()">
+💌 One Last Message
+</button>
+
+</div>
+
+`;
+
+}function lastPage(){
+
+document.body.innerHTML=`
+
+<div class="container">
+
+<h1 style="font-size:45px;">❤️ Just For You ❤️</h1>
+
+<div style="font-size:90px;animation:pop 1s infinite alternate;">
+🤗💖🌹
+</div>
+
+<p style="font-size:28px;line-height:1.8;">
+
+🥹 I Miss You Very Much ❤️<br><br>
+
+💖 I Love You More Than Words Can Say 💖<br><br>
+
+🤗 Sending You The Biggest Virtual Hug 🤗<br><br>
+
+🌹 Thank You For Being So Special 🌹
+
+</p>
+
+<h2 style="margin-top:20px;">
+Forever In My Heart ❤️
+</h2>
+
+</div>
+
+`;
+
+confetti();
+
+}
+
+function confetti(){
+
+for(let i=0;i<150;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML=["❤️","💖","🌹","✨","💕"][Math.floor(Math.random()*5)];
+
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top="-50px";
+c.style.fontSize=(20+Math.random()*25)+"px";
+c.style.transition="6s linear";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+c.style.top="110vh";
+},50);
+
+setTimeout(()=>{
+c.remove();
+},6500);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
