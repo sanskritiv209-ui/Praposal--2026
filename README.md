@@ -1,2 +1,2 @@
-# Praposal--2026
+# Proposal--2026
 Do you miss me then come soon
